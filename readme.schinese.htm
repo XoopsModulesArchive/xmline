@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>聚合新闻(XMLine)说明文件</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 36px;
+	font-weight: bold;
+}
+.style2 {font-family: Georgia, "Times New Roman", Times, serif}
+.style3 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; }
+.style4 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+.style6 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; color: #006600; }
+.style8 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; color: #FF0000; }
+.style9 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<table width="80%" align="center"><tr><td>
+<p align="center"><span class="style1">聚合新闻(XMLine)说明文件</span><br>
+</p>
+<br /><br />
+<p class="style4">XMLine是做什么用的</p>
+<p class="style2">
+XMLine 用于采集显示XML内容，包括各类RSS和ATOM. <br />
+可以看作是XOOPSHEADLINE的加强版.<br />
+<ol>功能:<br />
+<li>支持的类型: RSSs, ATOM<br />
+<li>可用的采集方法: CURL, fsockopen, fopen.<br />
+<li>多类别<br />
+<li>多内码转换<br />
+<li>可开放用户订制或提交<br />
+<li>Table-free模板<br />
+<li>无限制复制区块<br />
+<li>可自动更新(CRONJOB)<br />
+</ol>
+</p>
+<p class="style3" align="center">使用聚合新闻模块时，请务必详细阅读本说明文档。</p>
+<p class="style3" align="center"><strong>有些空间不能运行该模块，详情请看管理区相关测试。</strong></p>
+<p class="style4">一、安装</p>
+<p class="style2">把从XOOPS.org.cn下载的文件解压缩，得到xoops/modules/xmline目录，然后进入modules目录，把xmline目录和xconv目录上传到你XOOPS的modules下，再进入“管理区=&gt;系统管理=&gt;模块管理”安装“聚合新闻”模块和“Xoops Iconv”模块（图标带有“xconv”文字，）。这样就完成安装了。</p>
+<p class="style3">关于Xoops Iconv模块</p>
+<p class="style2">Xoops Iconv是转换内码的一个模块，比PHP的iconv函数效率更高。如果不想安装，就可以不用上传xconv目录和安装“Xoops Iconv”模块。虽然这个模块不是必须，但是我们非常推荐安装这个模块。</p>
+<p class="style4">二、使用</p>
+<p class="style2"><strong>分类管理：</strong>进入“管理区=&gt;聚合新闻（把鼠标放在左栏带有“XMLINE”文字的图标）=&gt;类别管理”，来进行分类的管理。</p>
+<p class="style2"><strong>添加网址：</strong>进入“管理区=&gt;聚合新闻（把鼠标放在左栏带有“XMLINE”文字的图标）=&gt;站点管理”来添加网址。<br></p>
+<p class="style2">设置项：</p>
+<p class="style2"><strong><span lang="en-us">RSS </span>网址：</strong>你想要读取的RSS地址。</p>
+<p class="style2"><strong>主题:</strong> 一般用几个字符标明，不要太长（所有首页显示的网摘都会显示为“[主题]标题”，因此主题不要太长，否则严重影响显示效果）</p>
+<p class="style2"><strong>网址：RSS所属</strong>网页地址, 可不填。</p>
+<p class="style2"><strong>描述：</strong>是对“主题”的进一步说明，可以详细一点介绍，可不填。</p>
+<p class="style2"><strong>分类：</strong>你添加的这个网摘属于什么分类。</p>
+<p class="style2"><strong>站点logo：</strong>没有可以不用。</p>
+<p class="style2"><strong>顺序: </strong>设置网站显示顺序</p>
+<p class="style2"><strong>Online:</strong> 如果填“1”，这个网站将会在前台出现，反之如果添“0”这个网站将不会在前台出现。</p>
+<p class="style2"><strong>最大条目:</strong> 限制要存取的最大新闻条数</p>
+<p class="style2"><strong>网页charset编码: </strong>如果留空, 则自动检查待采集页面的charset；如果强制不做内码转换，输入 null</p>
+<p class="style2"><strong>网页过渡编码: 从繁体UTF-8到简体GB, 填入BIG5; 从简体UTF-8到繁体BIG5，填入GB2312</strong>。</p>
+<p class="style2"><strong>刷新频率:</strong> 填上你要更新数据的频率，单位为分钟</p>
+<p class="style3">　</p>
+<p class="style3"><font size="4">关于Cron:</font></p>
+<p class="style2">Cron是UNIX/Linux系统下一个定时执行的指令，利用它可以定时触发聚合新闻的更新，也就是定时更新你的文摘，免去手动更新的麻烦，而且程序在后台运行，你感受不到速度的影响。（也可也以采用虚拟Cron, Pseudo-Cron，由访问用户触发。那么碰巧触发更新的那个用户，页面载入会特别慢）。</p>
+<p class="style6"><span class="style9">再添加Cron之前，你必须确定：</span></p>
+<p class="style8">你的空间拥有<a href="http://www.cpanel.net/" target="_blank">Cpanel</a>，向你的空间服务商询问是否拥有Cpanel。</p>
+<p class="style2"><span class="style8">如果你的空间没有Cpanel或无法使用Cron，可以告知 <a href="http://www.xoops.org.cn" target="_blank">http://xoops.org.cn</a>，定时触发你的网络文摘更新。</span><br>
+  <br>
+<b>方法</b>  
+<br />  
+<br />  
+1.<br>
+检查文摘更新接口文件, 在xoops根目录下的cache/xmline/xmline.php。该文件在模块安装时自动生成，可进入文摘模块的管理区检查该文件是否存在。如果不存在，可以"重新生成该文件"。</p>
+<p class="style2">2.<br>
+然后在Cpanel中添加CronJOB</p>
+<p class="style2">需要注明的是，在Command to run 输入框中，需要填入调用Cron脚本的<strong>绝对路径</strong>，也就是你的cron.php所在的绝对路径。<br>
+  <br>
+例如：/usr/local/bin/php /用户XOOPS绝对路径/xoops/cache/xmline/xmline.php</p>
+<p class="style2">你可以向你的空间服务商所取绝对路径地址。</p>
+<p class="style2">3.<br>
+如果你的空间没有Cron功能,你可以请其他有cron功能的服务器或站点从外部触发。<br />
+调用文件为 http://你的xoops网址/cache/xmline/xmline.php
+</p>
+<p class="style2">4.<br>
+如果路径http://你的xoops网址/cache/xmline/xmline.php不可用，请直接调用http://你的xoops网址/modules/xmline/update.php
+</p>
+
+<p class="style2">　</p>
+
+<p class="style4"><b>三、联系我们：</b></p>
+<p class="style2">XOOPS CHINA：<a href="http://xoops.org.cn" target="_blank">http://xoops.org.cn</a><br>
+  　</p>
+<p class="style2"></p>
+</td></tr></table>
+</body>
+</html>

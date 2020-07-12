@@ -1,0 +1,34 @@
+Changelog
+Jul 22nd, 2006 
+=============
+Validated with XOOPS 2.0.14
+
+Jan 29th, 2006 
+=============
+Compatible with XOOPS 2.0, 2.2, 2.3
+
+2005-11-18
+===============================================================
+1 transfer added
+
+2005-05-16: D.J.(phppp) http://xoops.org.cn
+===============================================================
+1 cleaning templates
+2 adding XOOPS Local Support Feeds
+
+2005-01-02: D.J.(phppp) http://xoops.org.cn
+===============================================================
+1 Change the priority of iconv/mb_convert_encoding
+
+2004-12-13: D.J.(phppp) http://xoops.org.cn
+===============================================================
+1 XMLine RC2 is out
+2 changing API with xconv
+3 auto-fetch description/url through parsing, suggested by mariuss
+4 spotlight block(s), requested by irmtfan
+
+
+2 To be continued ...2004-12-09: D.J.(phppp) http://xoops.org.cn
+===============================================================
+1 XMLine Beta is out
+2 To be continued ...

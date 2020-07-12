@@ -1,0 +1,46 @@
+<!-- start module contents -->
+<div id="pageheader">
+<{$header}>
+</div>
+
+<a id="top"></a>
+<div id="nav">
+<{foreach item=tab from=$nav_tabs}>
+	<{if $tab.link}>
+		<a href="<{$tab.link}>"><span><{$tab.title}></span></a>
+	<{else}>
+		<span class="active"><{$tab.title}></span>
+	<{/if}>
+<{/foreach}>
+</div>
+<br clear="both" />
+
+<div id="category">
+<{if $category.image}>
+<{$category.image}><br />
+<{/if}>
+<{$category.title}>
+</div>
+<br clear="both" />
+
+<div id="digest">
+<{foreach item=digest from=$digests}>
+	<div class="title"><a id="<{$digest.digest_id}>"></a><a target="_blank" href="<{$digest.url}>"><{$digest.image}> <{$digest.title}></a>:<{$digest.description}> [<{$digest.update}>] [<{$digest.expand}>] <a href='#top' title='Up'>UP</a></div>
+	<div class="content">
+		<{if $two_column>0}><div class="two_col"><{else}><div class="one_col"><{/if}>
+		<ul>
+		<{foreach item=theitem from=$digest.items}>
+			<li><{$theitem}></li>
+		<{/foreach}>
+		</ul>
+		</div>
+	</div>
+	<br clear="both" />
+<{/foreach}>
+</div>
+
+<div id="pagefooter">
+<{$custom}><br />
+<{$footer}>
+</div>
+<br clear="both" />

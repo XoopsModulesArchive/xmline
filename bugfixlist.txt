@@ -1,0 +1,17 @@
+Bugfix 1.02
+===============================================================
+1 template cleaning
+
+
+2004-12-13: D.J.(phppp) http://xoops.org.cn
+===============================================================
+1 XMLine RC2 is out
+2 changing API with xconv
+3 auto-fetch description/url through parsing, suggested by mariuss
+4 spotlight block(s), requested by irmtfan
+
+
+2 To be continued ...2004-12-09: D.J.(phppp) http://xoops.org.cn
+===============================================================
+1 XMLine Beta is out
+2 To be continued ...

@@ -1,0 +1,82 @@
+<div id="feed_channel">
+	<div class="title"><a href="<{$feed.channel.link}>" target="_blank"><{$feed.channel.title}></a>
+	</div>
+	<div class="content">
+	    <{if $feed.image.url != ""}>
+	    <span class="image">
+	        <img src="<{$feed.image.url}>" width="<{$feed.image.width|default:88}>" height="<{$feed.image.height|default:31}>" alt="<{$feed.image.title}>" />
+	    </span>
+	    <{/if}>
+	    <span class="channel">
+		  	<{if $feed.channel.lastbuilddate}>
+		    <div>
+		    <span class="desc"><{$smarty.const._MD_XMLINE_LASTBUILD}></span>
+		    <span class="content"><{$feed.channel.lastbuilddate}></span>
+		  	</div>
+		  	<{/if}>
+		  	<{if $feed.channel.description}>
+		  	<div>
+		    <span class="desc"><{$smarty.const._DESCRIPTION}></span>
+		    <span class="content"><{$feed.channel.description}></span>
+		  	</div>
+		  	<{/if}>
+		  	<{if $feed.channel.webmaster}>
+		  	<div>
+		    <span class="desc"><{$smarty.const._MD_XMLINE_WEBMASTER}></span>
+		    <span class="content"><{$feed.channel.webmaster|default:"&nbsp;"}></span>
+		  	</div>
+		  	<{/if}>
+		  	<{if $feed.channel.category}>
+		  	<div>
+		    <span class="desc"><{$smarty.const._MD_XMLINE_CATEGORY}></span>
+		    <span class="content"><{$feed.channel.category|default:"&nbsp;"}></span>
+		  	</div>
+		  	<{/if}>
+		  	<{if $feed.channel.generator}>
+		  	<div>
+		    <span class="desc"><{$smarty.const._MD_XMLINE_GENERATOR}></span>
+		    <span class="content"><{$feed.channel.generator|default:"&nbsp;"}></span>
+		  	</div>
+		  	<{/if}>
+		  	<{if $feed.channel.language}>
+		  	<div>
+		    <span class="desc"><{$smarty.const._MD_XMLINE_LANGUAGE}></span>
+		    <span class="content"><{$feed.channel.language|default:"&nbsp;"}></span>
+		  	</div>
+		  	<{/if}>
+	  	</span>
+  	</div>
+</div>
+
+<{section name=i loop=$feed.items}>
+<div id="feed_items">
+	<{if $feed.items[i].title != ""}>
+	<div class="title"><a id="<{$smarty.section.i.index}>"></a><a href="<{$feed.items[i].link}>" target="_blank"><{$feed.items[i].title}></a></div>
+	<{/if}>
+    <div class="content">
+    <{if $feed.items[i].category != ""}>
+      <span class="title"><{$smarty.const._MD_XMLINE_CATEGORY}></span>
+      <span class="content"><{$feed.items[i].category}></span>
+    <BR CLEAR='BOTH' />
+    <{/if}>
+    <{if $feed.items[i].author != ""}>
+      <span class="title"><{$smarty.const._MD_XMLINE_AUTHOR}></span>
+      <span class="content"><{$feed.items[i].author}></span>
+    <BR CLEAR='BOTH' />
+    <{/if}>
+    <{if $feed.items[i].pubdate != ""}>
+      <span class="title"><{$smarty.const._MD_XMLINE_PUBDATE}></span>
+      <span class="content"><{$feed.items[i].pubdate}></span>
+    <{/if}>
+	</div>
+    <{if $feed.items[i].description != ""}>
+    <div class="content">
+      <span class="content"><{$feed.items[i].description}></span>
+	</div>
+    <{/if}>
+    <div class="footer">
+    <a href="<{$xoops_url}>/modules/xmline/action.transfer.php?id=<{$feed.id}>&amp;no=<{$smarty.section.i.index}>" title="<{$smarty.const._MD_TRANSFER_DESC}>" target="_blank"><{$smarty.const._MD_TRANSFER}></a> | 
+    <a href="<{$feed.items[i].link}>" title="<{$feed.items[i].guid}>" target="_blank"><{$smarty.const._MORE}></a>
+    </div>
+</div>
+<{/section}>

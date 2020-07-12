@@ -1,0 +1,159 @@
+/* -- style.css -- */
+#digest ul {
+	margin: 0.2em 0.5em 1em 0.5em;
+	padding: 0em 0.5em 1em 0em;
+	line-height: 2em;
+}
+#digest ul li {
+	float: left;
+	margin-bottom:0.2em;
+}
+
+#digest div.two_col ul li {
+	width: 49%;
+}
+
+#digest div.one_col ul li{
+	width: 100%;
+}
+
+#nav{
+	margin-top: 10px;
+    clear: both;
+    width: 100%;
+}
+
+#nav span{
+    display: block;
+    float: left;
+    font-size: 14px;
+	padding: 3px 0.5em;
+  	margin: 0.2em 0.2em;
+	margin-left: 10px;
+	border: 1px solid #778;
+	background: #DDE;
+	white-space: nowrap;
+}
+
+#nav span.active{
+	font-weight: bold;
+	background: white;
+}
+
+#nav a{
+    display: block;
+}
+
+#nav a:hover{
+	cursor: pointer;
+	border: 0px;
+}
+
+div#pageheader{
+	font-size: 14px;
+	font-style: Compact;
+	font-weight: bold;
+	margin-left: 10px;
+	border-bottom: 3px solid #666;
+}
+
+div#pagefooter{
+	width: 20%;
+	float: right;
+	text-align: right;
+	font-size: 11px;
+	line-height: 150%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-top: 5px;
+	border-top: 1px dashed #666;
+}
+
+div#category{
+	float: center;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 150%;
+	margin-top: 20px;
+}
+
+div#digest{
+	margin: 20px;
+}
+
+#digest div.title{
+	font-size: 14px;
+	line-height: 150%;
+	margin: 10px;
+	border-bottom: 1px dashed #666;
+}
+
+#digest div.content{
+	padding-top: 5px;
+	margin-bottom: 20px;
+}
+
+#feed_channel{
+	border: solid 1px;
+	margin:10px;
+	clear: both;
+}
+
+#feed_channel div.title{
+	font-size: 13px;
+	font-weight: bold;
+	display: block;
+	color: white;
+	background: gray;
+}
+
+#feed_channel div.content{
+	margin:10px;
+}
+
+#feed_channel div.content span.desc{
+	font-weight: bold;
+}
+
+#feed_channel div.title a{
+	color: white;
+}
+
+#feed_channel span.image{
+	float: left;
+	margin-right: 10px;
+}
+
+#feed_channel span.channel{
+	display: block;
+}
+
+#feed_items{
+	clear: both;
+	border: dashed 1px;
+	margin: 10px;
+	margin-top: 20px;
+}
+
+#feed_items div.title{
+	font-size: 13px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+#feed_items div.content span.title{
+	font-weight: bold;
+}
+
+#feed_items div.content{
+	margin: 10px;
+}
+
+#feed_items .footer{
+	font-weight: bold;
+	text-align: right;
+	float: right;
+	margin: 10px;
+	background: transparent !important;
+}

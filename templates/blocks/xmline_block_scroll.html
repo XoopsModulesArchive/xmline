@@ -1,0 +1,6 @@
+<div style="clear: both;">
+<marquee behavior="scroll" direction="left" scrolldelay="<{$block.scrolldelay}>" scrollamount="<{$block.scrollamount}>" LOOP="continuous" onMouseOver="this.stop()" onMouseOut="this.start()">
+<{foreach item=items from=$block.items}>&nbsp;&nbsp;&nbsp;<{$items}>
+<{/foreach}>
+</marquee>
+</div>

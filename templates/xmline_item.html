@@ -1,0 +1,36 @@
+<!-- start module contents -->
+<div id="pageheader">
+<{$header}>
+</div>
+
+<a id="top"></a>
+<div id="nav">
+<{foreach item=tab from=$nav_tabs}>
+	<{if $tab.active}>
+		<a href="<{$tab.link}>"><span class="active"><{$tab.title}></span></a>
+	<{else}>
+		<a href="<{$tab.link}>"><span><{$tab.title}></span></a>
+	<{/if}>
+<{/foreach}>
+</div>
+<br clear="both" />
+
+<div id="category">
+<{if $category.image}>
+<{$category.image}><br />
+<{/if}>
+<{$category.title}>
+</div>
+<br clear="both" />
+
+<div id="digest">
+<div class="title"><a id="<{$digest.digest_id}>"></a><a target="_blank" href="<{$digest.url}>"><{$digest.image}> <{$digest.title}></a>:<{$digest.description}> [<{$digest.update}>]</div>
+<div class="content"><{include file="db:xmline_feed.html" feed=$feed}></div>
+<br clear="both" />
+</div>
+
+<div id="pagefooter">
+<{$custom}><br />
+<{$footer}>
+</div>
+<br clear="both" />

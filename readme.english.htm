@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>XMLine 1.0 readme</title>
+<style type="text/css">
+<!--
+.style1 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 36px;
+	font-weight: bold;
+}
+.style2 {font-family: "Times New Roman", Times, serif}
+.style3 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; }
+.style4 {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-weight: bold;
+}
+.style6 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; color: #006600; }
+.style8 {font-family: Georgia, "Times New Roman", Times, serif; font-weight: bold; color: #FF0000; }
+.style9 {color: #FF0000}
+-->
+</style>
+</head>
+
+<body>
+<table style="width:80%; float:center;border: dashed 2px; margin:20px; padding:10px;"><tr><td>
+<p align="center"><span class="style1">Xoops XMLine</span>
+</p>
+<br /><br />
+<p class="style4">What is XMLine</p>
+<p class="style2">
+XMLine is a XOOP2.0+ module for fetching, parsing and displaying XML feeds. <br />
+It could be considered as an improved XoopsHeadline module.<br />
+<ol>Features:<br />
+<li>Supported feeds: RSSs, ATOM<br />
+<li>Fetching methods: CURL, fsockopen, fopen.<br />
+<li>Multi-category<br />
+<li>Multi-language encoding conversion<br />
+<li>User Customable fetching/submit<br />
+<li>Table-free templates<br />
+<li>Unlimited blocks.<br />
+<li>Automatic update using cron job<br />
+</ol>
+<p class="style4">1. Install</p>
+<p class="style2">Install the "XMLine" module as usual.<br /><br />
+<b><font size="4" face="Georgia">2. How to use it</font></b></p>
+<p class="style2"><strong>Server status:</strong>
+<ul>Detect and help configure your sites.<br />
+<li>XML extension: you must have the XML extension installed. <br />
+<li>Fetch techniques: "CURL extension", "fsockopen function", "allow_url_fopen", you must have at least one available in order to use the Digest module. <br />
+<li>Encoding conversion: "Iconv", "Xconv", you need at least one to fetch webpages that use other charset than your default charset. <br />
+<li>Update API: you can update your Digest content automatically by calling this file externally, for instance, using cron job. <br />
+</ul>
+</p>
+<p class="style2"><strong>Add/edit sites:</strong>
+<ul>Add or edit websites that you would fetch contents. Brief guide:<br />
+<li>Title: abbreviation of the site<br />
+<li>RSS: the URL of the feed to be fetched/parsed<br />
+<li>URL: the URL of the site<br />
+<li>Order: for display order<br />
+<li>Online: 1 - public; 0 - hide<br />
+<li>Maximum items: max items to be fetched<br />
+<li>Charset of XML encoding: "null" for forcing no encoding conversion; leaving blank if feed has specified charset; otherwise, specify it<br />
+<li>Intermediate charset: a stupid but must-do manner for converting S/UTF-8/T Chinese.<br />
+<li>Update time: the time interval that allows for new content fetch
+</ul>
+</p>
+<p class="style2"><b><font size="4" face="Georgia">3. Case study</font></b></p>
+<p class="style2"><strong>Reading Xoops Official RSS.</strong><br />
+<ul>
+<li>RSS: http://www.xoops.org/backend.php<br />
+<li>Title: XOOPS <br />
+<li>URL:<br />
+<li>Description:<br />
+<li>Order: 1<br />
+<li>Online: 1<br />
+<li>Maximum items: 20<br />
+<li>Charset of XML encoding: <br />
+<li>Intermediate charset: <br />
+<li>Update time: 30<br />
+</ul>
+</p>
+<p class="style4">4. Tips</p>
+<p class="style3">Update XML feed content automatically by using cron job</p>
+<p class="style2">
+<ol>
+<li>the API file: XOOPS_ROOT_PATH/cache/xmline/xmline.php. The file is created during installation, you may re-create whenever it is deleted.<br />
+<li>add cronjob: the command to run: YourPhpPath XOOPS_ROOT_PATH/cache/xmline/xmline.php<br />
+<li>if you do not have cron, let someone else help update your XMLine using his cron: (http://)YourXoopsURL/cache/xmline/xmline.php<br />
+<li>At least, you can use pseudo-cron: put the link (http://)YourXoopsURL/cache/xmline/xmline.php to some page of your site, such as the include/common.php<br />
+</ol>
+</p>
+<p class="style3">Adding on-fly custom blocks to display feeds from a site</p>
+<p class="style2">
+<ol>With XMLine, you can add blocks on-fly as following.
+
+<li>Enter 'Administration Menu'=>"block admin"=>"Add new block"
+<li>In the "Add a new block":
+<ol>
+<li>Block Type: choose anyone as you prefer
+<li>Weight: input any valid value as you prefer
+<li>Visible: select any one as you prefer
+<li>Visible in: set any one as you prefer
+<li>Title: input any valid text as you prefer
+<li>Content:
+<pre>
+===========================================================================
+include_once(XOOPS_ROOT_PATH . '/modules/xmline/blocks/xmline_blocks.php');
+$options = "1|5|100";
+b_xmline_custom($options);
+===========================================================================
+</pre>
+//$options = "digest_id|Items|description length (0 for no limit)"
+<li>Content Type: MUSTBE "PHP Script"
+<li>Cache lifetime: choose any one as you prefer
+<li>Preview, Submit: press any one as you prefer, BE SURE press at least one time "submit" before leaving block admin
+</ol>
+</ol>
+</p>
+<p class="style4"><b>5. Contact</b></p>
+<p class="style2">Xoops China: <a href="http://xoops.org.cn" target="_blank">http://xoops.org.cn</a><br />
+D.J. php_pp@hotmail.com
+</p>
+</td></tr></table>
+</body>
+</html>
